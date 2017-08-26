@@ -1,0 +1,230 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NmtExplorer</RootNamespace>
+    <AssemblyName>NmtExplorer</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Browse.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{B939A503-2787-49E2-A8CB-5F67F62F8D10}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Playlist.aspx" />
+    <Content Include="theme\deepblue\HD\background\bg.jpg" />
+    <Content Include="theme\deepblue\HD\background\divider.png" />
+    <Content Include="theme\deepblue\HD\background\line_side.png" />
+    <Content Include="theme\deepblue\HD\background\setup_rect.png" />
+    <Content Include="theme\deepblue\HD\home\icon_music.png" />
+    <Content Include="theme\deepblue\HD\home\icon_music_on.png" />
+    <Content Include="theme\deepblue\HD\home\icon_photo.png" />
+    <Content Include="theme\deepblue\HD\home\icon_photo_on.png" />
+    <Content Include="theme\deepblue\HD\home\icon_plugin.png" />
+    <Content Include="theme\deepblue\HD\home\icon_plugin_on.png" />
+    <Content Include="theme\deepblue\HD\home\icon_tran.png" />
+    <Content Include="theme\deepblue\HD\home\icon_video.png" />
+    <Content Include="theme\deepblue\HD\home\icon_video_on.png" />
+    <Content Include="theme\deepblue\HD\home\title_start.png" />
+    <Content Include="theme\deepblue\HD\icon\album.png" />
+    <Content Include="theme\deepblue\HD\icon\artist.png" />
+    <Content Include="theme\deepblue\HD\icon\down_off.png" />
+    <Content Include="theme\deepblue\HD\icon\down_on.png" />
+    <Content Include="theme\deepblue\HD\icon\eyetv.png" />
+    <Content Include="theme\deepblue\HD\icon\folder.png" />
+    <Content Include="theme\deepblue\HD\icon\genre.png" />
+    <Content Include="theme\deepblue\HD\icon\list_bar.png" />
+    <Content Include="theme\deepblue\HD\icon\menu.png" />
+    <Content Include="theme\deepblue\HD\icon\network.png" />
+    <Content Include="theme\deepblue\HD\icon\photo.png" />
+    <Content Include="theme\deepblue\HD\icon\playlist.png" />
+    <Content Include="theme\deepblue\HD\icon\radio.png" />
+    <Content Include="theme\deepblue\HD\icon\rect.png" />
+    <Content Include="theme\deepblue\HD\icon\song.png" />
+    <Content Include="theme\deepblue\HD\icon\subfolder.png" />
+    <Content Include="theme\deepblue\HD\icon\submit.png" />
+    <Content Include="theme\deepblue\HD\icon\tv.png" />
+    <Content Include="theme\deepblue\HD\icon\up_off.png" />
+    <Content Include="theme\deepblue\HD\icon\up_on.png" />
+    <Content Include="theme\deepblue\HD\icon\video.png" />
+    <Content Include="theme\deepblue\HD\icon\watchfolder.png" />
+    <Content Include="theme\deepblue\HD\logo\music.png" />
+    <Content Include="theme\deepblue\HD\logo\photo.png" />
+    <Content Include="theme\deepblue\HD\logo\preferences.png" />
+    <Content Include="theme\deepblue\HD\logo\video.png" />
+    <Content Include="theme\deepblue\HD\photo\empty.png" />
+    <Content Include="theme\deepblue\HD\photo\thumb_none.png" />
+    <Content Include="theme\deepblue\HD\photo\thumb_none100x75.png" />
+    <Content Include="theme\deepblue\HD\slide\slide-chinese.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-chinese_trad.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-dutch.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-english.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-german.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-japanese.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-japanese_win.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-polish.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-portuguese.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-russian.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-solvenian.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-spanish.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide-swedish.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide1.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide2.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide3.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide4.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide5.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide6.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide7.jpg" />
+    <Content Include="theme\deepblue\HD\slide\slide8.jpg" />
+    <Content Include="theme\deepblue\HD\style.css" />
+    <Content Include="theme\deepblue\SD\background\bg.jpg" />
+    <Content Include="theme\deepblue\SD\background\divider.png" />
+    <Content Include="theme\deepblue\SD\background\line_side.png" />
+    <Content Include="theme\deepblue\SD\background\pc.jpg" />
+    <Content Include="theme\deepblue\SD\background\setup_rect.png" />
+    <Content Include="theme\deepblue\SD\home\icon_music.png" />
+    <Content Include="theme\deepblue\SD\home\icon_music_on.png" />
+    <Content Include="theme\deepblue\SD\home\icon_photo.png" />
+    <Content Include="theme\deepblue\SD\home\icon_photo_on.png" />
+    <Content Include="theme\deepblue\SD\home\icon_plugin.png" />
+    <Content Include="theme\deepblue\SD\home\icon_plugin_on.png" />
+    <Content Include="theme\deepblue\SD\home\icon_video.png" />
+    <Content Include="theme\deepblue\SD\home\icon_video_on.png" />
+    <Content Include="theme\deepblue\SD\home\title_start.png" />
+    <Content Include="theme\deepblue\SD\icon\album.png" />
+    <Content Include="theme\deepblue\SD\icon\artist.png" />
+    <Content Include="theme\deepblue\SD\icon\down_off.png" />
+    <Content Include="theme\deepblue\SD\icon\down_on.png" />
+    <Content Include="theme\deepblue\SD\icon\eyetv.png" />
+    <Content Include="theme\deepblue\SD\icon\folder.png" />
+    <Content Include="theme\deepblue\SD\icon\genre.png" />
+    <Content Include="theme\deepblue\SD\icon\list_bar.png" />
+    <Content Include="theme\deepblue\SD\icon\menu.png" />
+    <Content Include="theme\deepblue\SD\icon\network.png" />
+    <Content Include="theme\deepblue\SD\icon\photo.png" />
+    <Content Include="theme\deepblue\SD\icon\playlist.png" />
+    <Content Include="theme\deepblue\SD\icon\radio.png" />
+    <Content Include="theme\deepblue\SD\icon\rect.png" />
+    <Content Include="theme\deepblue\SD\icon\song.png" />
+    <Content Include="theme\deepblue\SD\icon\subfolder.png" />
+    <Content Include="theme\deepblue\SD\icon\submit.png" />
+    <Content Include="theme\deepblue\SD\icon\tv.png" />
+    <Content Include="theme\deepblue\SD\icon\up_off.png" />
+    <Content Include="theme\deepblue\SD\icon\up_on.png" />
+    <Content Include="theme\deepblue\SD\icon\video.png" />
+    <Content Include="theme\deepblue\SD\icon\watchfolder.png" />
+    <Content Include="theme\deepblue\SD\logo\music.png" />
+    <Content Include="theme\deepblue\SD\logo\photo.png" />
+    <Content Include="theme\deepblue\SD\logo\preferences.png" />
+    <Content Include="theme\deepblue\SD\logo\video.png" />
+    <Content Include="theme\deepblue\SD\photo\empty.png" />
+    <Content Include="theme\deepblue\SD\photo\thumb_none.png" />
+    <Content Include="theme\deepblue\SD\slide\slide-chinese.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-chinese_trad.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-dutch.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-english.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-german.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-japanese.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-japanese_win.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-polish.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-portuguese.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-russian.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-solvenian.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-spanish.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide-swedish.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide1.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide2.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide3.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide4.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide5.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide6.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide7.jpg" />
+    <Content Include="theme\deepblue\SD\slide\slide8.jpg" />
+    <Content Include="theme\deepblue\SD\style.css" />
+    <Content Include="theme\deepblue\template\Browse\Browse.htm" />
+    <Content Include="theme\deepblue\template\Browse\DirectoryListEntry.htm" />
+    <Content Include="theme\deepblue\template\Browse\NextPageLink.htm" />
+    <Content Include="theme\deepblue\template\Browse\PreviousPageLink.htm" />
+    <Content Include="theme\deepblue\template\Home\Home.htm" />
+    <Content Include="theme\deepblue\template\Home\MovieJukeboxLink.htm" />
+    <Content Include="theme\deepblue\template\Layout.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="theme\deepblue\HD\home\icon_browse.png" />
+    <Content Include="theme\deepblue\HD\home\icon_browse_on.png" />
+    <Content Include="theme\deepblue\HD\home\icon_moviejukebox.png" />
+    <Content Include="theme\deepblue\HD\home\icon_moviejukebox_on.png" />
+    <Content Include="theme\deepblue\SD\home\icon_browse.png" />
+    <Content Include="theme\deepblue\SD\home\icon_browse_on.png" />
+    <Content Include="theme\deepblue\SD\home\icon_moviejukebox.png" />
+    <Content Include="theme\deepblue\SD\home\icon_moviejukebox_on.png" />
+    <Content Include="theme\deepblue\theme.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3098</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

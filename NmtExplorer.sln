@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NmtExplorer", "NmtExplorer\NmtExplorer.csproj", "{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{B939A503-2787-49E2-A8CB-5F67F62F8D10}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB69EC9-1CF9-4C9C-B5FD-5C539AED3CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B939A503-2787-49E2-A8CB-5F67F62F8D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B939A503-2787-49E2-A8CB-5F67F62F8D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B939A503-2787-49E2-A8CB-5F67F62F8D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B939A503-2787-49E2-A8CB-5F67F62F8D10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

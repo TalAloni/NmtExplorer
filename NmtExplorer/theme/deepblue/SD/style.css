@@ -1,0 +1,16 @@
+<!-- Blue Gaya SD Stylesheet -->
+
+body { color: B1D3F6; background-color: 0066cc }
+a { text-decoration:none; color: B1D3F6 }
+.menu {font-size:14px;color: 81C9ED;font-weight:bold;}
+.text {font-size:14px;color: A8D1E6;font-weight:bold;}
+.server {font-size:14px;color: 2F84B6;font-weight:bold;}
+.list {font-size:14px;color: B1D3F6;font-weight:bold;}
+.title {font-size:14px;color: CEE9F0;font-weight:bold;}
+.appmenu {font-size:14px;color: B1D3F6;font-weight:bold;}
+.bold { font-size:14px; color: B1D3F6;font-weight:bold; }
+.pagingHighlight { font-size:12px; color: FFFF33 }
+.paging {font-size:12px;color: 5097CD; }
+.msg {font-size:14px;color: A8D1E6;font-weight:bold;}
+.invalid {font-size:14px;color: FFFF00;font-weight:bold;}
+
