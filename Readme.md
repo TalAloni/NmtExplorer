@@ -6,8 +6,9 @@ It's targeted for advanced users, who wish to utilize a server oriented and flex
 
 Requirements:
 -------------
-+ IIS 6 / 7 (Windows XP Pro x64 / Windows  Home Server / Windows Server 2003 / Windows Server 2008)  
-  Note: IIS 5.1 (Windows XP Pro) does not *officially* support files > 4GB, but can be used as well.
++ IIS 6 / 7 (Windows XP Pro x64 / Windows Home Server / Windows Server 2003 / Windows Server 2008)  
+  + IIS 5.1 (Windows XP Pro) does not *officially* support files > 4GB, but can be used as well.  
+  + IIS 7.5 RTM / RC are not compatible with the Popcorn Hour A-100 (HEAD requests containing Range header will result in HTTP status code 416), it's possible to use Beta http.sys v6.1.7000.0 and pre-Beta static.dll v6.1.6801.0  
 + .Net Framework 2.0  
 
 Limitations:
