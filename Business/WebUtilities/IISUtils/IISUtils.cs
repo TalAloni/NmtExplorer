@@ -91,10 +91,15 @@ namespace Utilities
                 if (relativeUrl[index] == '/')
                 {
                     string virtualDirectoryName = relativeUrl.Substring(1, index - 1);
-                    string virtualDirectoryPath = GetVirtualDirectoryPhysicalPath(virtualDirectoryName);
-                    if (virtualDirectoryPath != String.Empty)
+                    string virtualDirectoryPhysicalPath = GetVirtualDirectoryPhysicalPath(virtualDirectoryName);
+                    if (!String.IsNullOrEmpty(virtualDirectoryPhysicalPath))
                     {
-                        return String.Format("{0}\\{1}", virtualDirectoryPath, relativeUrl.Substring(index + 1).Replace("/", "\\"));
+                        if (!virtualDirectoryPhysicalPath.EndsWith("\\"))
+                        {
+                            virtualDirectoryPhysicalPath += "\\";
+                        }
+
+                        return virtualDirectoryPhysicalPath + relativeUrl.Substring(index + 1).Replace("/", "\\");
                     }
                 }
             }
