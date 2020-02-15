@@ -13,16 +13,21 @@ namespace Utilities
     /// </summary>
     public class IISUtils
     {
-        public static string GetIISSiteName(string iisHost, string serverComment)
+        public static string GetIISSiteID(string siteName)
+        {
+            return GetIISSiteID("IIS://localhost", siteName);
+        }
+
+        public static string GetIISSiteID(string iisHost, string siteName)
         {
             string adsiPath = iisHost + "/W3SVC";
-            
+
             try
             {
                 DirectoryEntry entry = new DirectoryEntry(adsiPath);
                 foreach (DirectoryEntry site in entry.Children)
                 {
-                    if (site.SchemaClassName == "IIsWebServer" && site.Properties["ServerComment"].Value.ToString().Equals(serverComment))
+                    if (site.SchemaClassName == "IIsWebServer" && site.Properties["ServerComment"].Value.ToString().Equals(siteName))
                     {
                         return site.Name;
                     }
@@ -32,13 +37,19 @@ namespace Utilities
             {
                 return String.Empty;
             }
-            
+
             return String.Empty;
         }
 
-        public static string GetVirtualDirectoryPhysicalPath(string iisHost, string siteName, string virtualDirectoryName)
+        /// <param name="virtualDirectoryName">Explicit virtual directory name, excluding physical subdirectories</param>
+        public static string GetVirtualDirectoryPhysicalPath(string siteID, string virtualDirectoryName)
         {
-            string adsiPath = String.Format("{0}/W3SVC/{1}/Root/{2}", iisHost, siteName, virtualDirectoryName);
+            return GetVirtualDirectoryPhysicalPath("IIS://localhost", siteID, virtualDirectoryName);
+        }
+
+        public static string GetVirtualDirectoryPhysicalPath(string iisHost, string siteID, string virtualDirectoryName)
+        {
+            string adsiPath = String.Format("{0}/W3SVC/{1}/Root/{2}", iisHost, siteID, virtualDirectoryName);
             try
             {
                 DirectoryEntry entry = new DirectoryEntry(adsiPath);
@@ -58,27 +69,6 @@ namespace Utilities
             }
         }
 
-        public static string GetVirtualDirectoryPhysicalPath(string iisHost, string virtualDirectoryName)
-        {
-            string serverComment = "Default Web Site";
-            string siteName = GetIISSiteName(iisHost, serverComment);
-            if (siteName != String.Empty)
-            {
-                return GetVirtualDirectoryPhysicalPath(iisHost, siteName, virtualDirectoryName);
-            }
-            else
-            {
-                return String.Empty;
-            }
-        }
-
-        /// <param name="virtualDirectoryName">Explicit virtual directory name, excluding physical subdirectories</param>
-        public static string GetVirtualDirectoryPhysicalPath(string virtualDirectoryName)
-        {
-            return GetVirtualDirectoryPhysicalPath("IIS://localhost", virtualDirectoryName);
-        }
-
-
         /// <summary>
         /// Map virtual path to physical path
         /// </summary>
@@ -86,20 +76,25 @@ namespace Utilities
         public static string MapPath(string virtualPath)
         {
             string relativeUrl = UrlUtils.ToRelativeUrl(virtualPath);
-            for (int index = relativeUrl.Length - 1; index > 0; index--)
+            string siteID = GetIISSiteID(HostingEnvironment.SiteName);
+            if (!String.IsNullOrEmpty(siteID))
             {
-                if (relativeUrl[index] == '/')
+                for (int index = relativeUrl.Length - 1; index > 0; index--)
                 {
-                    string virtualDirectoryName = relativeUrl.Substring(1, index - 1);
-                    string virtualDirectoryPhysicalPath = GetVirtualDirectoryPhysicalPath(virtualDirectoryName);
-                    if (!String.IsNullOrEmpty(virtualDirectoryPhysicalPath))
+                    if (relativeUrl[index] == '/')
                     {
-                        if (!virtualDirectoryPhysicalPath.EndsWith("\\"))
-                        {
-                            virtualDirectoryPhysicalPath += "\\";
-                        }
+                        string virtualDirectoryName = relativeUrl.Substring(1, index - 1);
+                        string virtualDirectoryPhysicalPath = GetVirtualDirectoryPhysicalPath(siteID, virtualDirectoryName);
 
-                        return virtualDirectoryPhysicalPath + relativeUrl.Substring(index + 1).Replace("/", "\\");
+                        if (!String.IsNullOrEmpty(virtualDirectoryPhysicalPath))
+                        {
+                            if (!virtualDirectoryPhysicalPath.EndsWith("\\"))
+                            {
+                                virtualDirectoryPhysicalPath += "\\";
+                            }
+
+                            return virtualDirectoryPhysicalPath + relativeUrl.Substring(index + 1).Replace("/", "\\");
+                        }
                     }
                 }
             }
